@@ -1,0 +1,136 @@
+<view class='container'>
+</view>
+<!--头像名称-->
+<view class="partOne">
+  
+  <view class="userinfo">
+    <block>
+      <view class="userinfo-avatar">
+        <button class="avatar-wrapper" bindtap="load">
+    <image class="avatar" src="{{touxiang}}"></image>
+  </button> 
+      </view>
+      <text>{{name}}</text>
+    </block>
+
+
+  </view>
+
+
+  <view class="scanicon">
+    <van-tag round color="#99ccff" size='large'>积分：0</van-tag> 
+  </view>
+</view>
+
+
+<view class="partTwo">
+
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name">粉丝</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name">关注</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">0</view>
+        <view class="his_name" >获赞与收藏</view>
+      </navigator>
+
+
+
+</view>
+<view class="partThree">
+
+<navigator>
+  <view class="his_pic"><image src="/images/set.png" mode="widthFix"style="width:100rpx"></image></view>
+  <view class="his_name">个人设置</view>
+</navigator>
+<navigator>
+  <view class="his_pic"><image src="https://s1.ax1x.com/2023/01/14/pSMhsXt.png" mode="widthFix"style="width:100rpx"></image></view>
+  <view class="his_name">推广海报</view>
+</navigator>
+<navigator>
+  <view class="his_pic"><image src="https://s1.ax1x.com/2023/01/14/pSMhLAU.png" mode="widthFix"style="width:100rpx"></image></view>
+  <view class="his_name" >免费积分</view>
+</navigator>
+<navigator>
+  <view class="his_pic"><image src="https://s1.ax1x.com/2023/01/14/pSM4Sj1.png" mode="widthFix"style="width:100rpx"></image></view>
+  <view class="his_name" >账户充值</view>
+</navigator>
+<navigator>
+  <view class="his_pic"><image src="https://s1.ax1x.com/2023/01/14/pSM4kND.png" mode="widthFix"style="width:100rpx"></image></view>
+  <view class="his_name" >充值账单</view>
+</navigator>
+
+
+</view>
+<view class="tab">  
+<van-tabs color="#66ccff" nav-class='van-tabs' title-active-color='#66ccff' title-inactive-color='gray' title-style='color:#66ccff' animated active="{{ active }}" bind:change="onChange">
+  <van-tab title="已发布">
+    <view class="content1">
+<van-swipe-cell id="swipe-cell" right-width="{{ 65 }}" left-width="{{ 0 }}"  async-close bind:close="onClose">
+  <view slot="left" disabled>选择</view>
+  <van-cell-group>
+    <view class="partTwo2">
+    <view>
+      <image class="button" src="https://s1.ax1x.com/2023/06/07/pCFzGGj.jpg" ></image>
+
+    </view>
+    <view class="text" style="white-space:pre-wrap;">
+    <view style="display: flex;"><text style="font-size: 30rpx;font-weight: 500;">    我的声音</text></view>
+    <view style="display: flex;margin-top: 10rpx;letter-spacing: 1rpx;"><text style="font-size: 20rpx;color: gray;">    15 Auq 2022   09:30 am</text></view>
+    </view>
+    <view>
+    <text style="color: gray;font-size: 25rpx;">00:12:14</text>
+    </view>
+  </view>
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell>      
+</view><van-dialog id="van-dialog" />
+
+
+
+<view class="content1">
+  <view class="partTwo2">
+    <view>
+      <image class="button" src="https://s1.ax1x.com/2023/06/07/pCFzGGj.jpg" ></image>
+    </view>
+    <view class="text" style="white-space:pre-wrap;">
+    <view style="display: flex;"><text style="font-size: 30rpx;font-weight: 500;">    震撼男声</text></view>
+    <view style="display: flex;margin-top: 10rpx;letter-spacing: 1rpx;"><text style="font-size: 20rpx;color: gray;">    15 Auq 2022   18:22 am</text></view>
+    </view>
+    <view>
+    <text style="color: gray;font-size: 25rpx;">00:28:33</text>
+    </view>
+  </view>
+</view>
+
+  </van-tab>
+  <van-tab title="草稿箱">
+    <view class="content1">
+  <view class="partTwo2">
+    <view>
+      <button class="button" style="background-image:url(https://s1.ax1x.com/2023/03/26/pprahi8.png);" size="mini"></button>
+    </view>
+    <view class="text" style="white-space:pre-wrap;">
+    <view style="display: flex;"><text style="font-size: 30rpx;font-weight: 500;">    我的声音</text></view>
+    <view style="display: flex;margin-top: 10rpx;letter-spacing: 1rpx;"><text style="font-size: 20rpx;color: gray;">    15 Auq 2022   09:30 am</text></view>
+    </view>
+    <view>
+    <text style="color: gray;font-size: 25rpx;">00:28:14</text>
+    </view>
+  </view>
+</view>
+
+  </van-tab>
+  <van-tab title="赞过与收藏"></van-tab>
+  <van-tab disabled title="">内容 3</van-tab>
+</van-tabs>
+
+
+</view>
+
+

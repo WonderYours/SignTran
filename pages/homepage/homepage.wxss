@@ -1,0 +1,118 @@
+/* pages/homepage/homepage.wxss */
+page {
+  background-color: #f5f5f5;
+}
+.content {
+  border-radius: 36rpx 36rpx 0 0;
+  padding: 15rpx 0;
+  overflow-y: scroll;
+}
+.partTwo{
+  height:120rpx;
+  background-color: #f5f5f5;
+  border-radius: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+}
+.partTwo1{
+  height:400rpx;
+  background-color: #ffffff;
+  border-radius: 25rpx;
+}
+.main{
+  padding-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+}
+.button{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 15%;
+  flex-shrink: 0;
+  background-repeat:no-repeat;
+  background-position: center;
+  color:transparent;
+
+
+}
+.text{
+  height: 80rpx;
+  width: 70%;
+  border-radius: 25rpx;
+}
+swiper {
+  display: flex;
+  align-items: center;
+}
+ 
+.swiper-box {
+  width: 100%;
+  position: absolute;
+  z-index: 9;
+}
+.swiper-img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+}
+ 
+.swiper-img-active {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+}
+.parent {
+  position: relative;
+}
+
+.advertise{
+  height: 280rpx;
+}
+
+.adi view {
+  height: 100%;
+  width: 90%;
+  border-radius: 30rpx;
+  margin-left: 5%;
+}
+
+.red {
+  background-image: url('https://s21.ax1x.com/2024/04/09/pFOtwdO.png');
+  -moz-background-size:100% 100%; background-size:100% 100%;
+}
+
+.green {
+  background-image: url('https://s1.ax1x.com/2023/06/08/pCkVTMD.jpg');
+  -moz-background-size:100% 100%; background-size:100% 100%;
+}
+
+.blue {
+  background-image: url('https://s1.ax1x.com/2023/06/08/pCkZkon.jpg');
+  -moz-background-size:100% 100%; background-size:100% 100%;
+}
+
+.dots {
+  position: absolute;
+  bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dots view {
+  width: 10rpx;
+  height: 10rpx;
+  margin: 0 6rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+
+.dots .active {
+  width: 30rpx;
+  background-color: orange;
+}

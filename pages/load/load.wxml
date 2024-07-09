@@ -1,0 +1,14 @@
+<view data-weui-theme="{{theme}}">
+  <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+    <image class="avatar" src="{{avatarUrl}}"></image>
+  </button> 
+  <mp-form>
+    <mp-cells>
+      <mp-cell title="昵称">
+        <input bindinput='getInputName'  class="weui-input" placeholder="请输入昵称"/>
+      </mp-cell>
+    </mp-cells>
+  </mp-form>
+</view>
+<view class="button" style="margin-top: 800rpx;">
+<van-button type="primary" custom-style='height:70rpx;width:180rpx;' bind:click='backto'>确 定</van-button></view>

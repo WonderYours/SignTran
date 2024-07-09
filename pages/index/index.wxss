@@ -1,0 +1,20 @@
+/**index.wxss**/
+.sc{
+  height:100rpx;
+}
+.txt{
+  height: 85rpx!important;
+  font-size:45rpx;
+}
+van-icon .van-icon{
+  font-size: 50rpx!important;
+  color: blue;
+}
+page {
+  background-color: #f5f5f5;
+}
+van-search .van-search__content {
+  border:2rpx solid #949494;
+  border-radius:20rpx;
+  box-shadow:2rpx 2rpx 5rpx #000000;
+}

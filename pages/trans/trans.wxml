@@ -1,0 +1,875 @@
+<!--pages/trans.wxml-->
+
+<view class="content">
+  <view class="allService">
+
+    <view class="title">
+      <van-icon size="70rpx" name="coupon-o" />
+      <text style="color: #84d3e9;margin-top: -30rpx;">
+        开始录音</text>
+      <van-icon size="70rpx" name="setting-o" />
+    </view>
+
+  </view>
+  <view style="justify-content: space-between;display: flex;margin-top: 50rpx;">
+    <button class="button" style="background-image:url(https://s1.ax1x.com/2023/03/26/ppraHLn.png);" size="mini"></button>
+  </view>
+  <view class="voiceView">
+    <view class="voiceTime" style="text-align: center;color: #84d3e9;font-size: 60rpx;font-weight: 350;">00.00.<span>{{currentTime}}</span></view>
+    <view class="voiceLine">
+      <view class="voiceBox" wx:if="{{!showWaveView}}">
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave2">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave3">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave2">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave2">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave3">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+      </view>
+      <view class="voiceBox" wx:if="{{showWaveView}}">
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave2">
+          <view class="voiceWave">
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave3">
+          <view class="voiceWave">
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave2">
+          <view class="voiceWave">
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+          </view>
+        </view>
+        <view class="Wave2">
+          <view class="voiceWave">
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave3">
+          <view class="voiceWave">
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au1"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au2"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+            <view class="auItem au3"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au4"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au5"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+            <view class="auItem au6"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+        <view class="Wave1">
+          <view class="voiceWave">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+          <view class="voiceWave1">
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+            <view class="auItem"></view>
+          </view>
+        </view>
+      </view>
+      <view class="voicePointer" style="left:{{currentLeft}}rpx"></view>
+    </view>
+
+  </view>
+  <!--
+  <view class="text" style="white-space:pre-wrap;font-family: STXingKai;">
+    <view>
+      <text style="color: #84d3e9;font-size: 40rpx;">      参考文本</text>
+      <textarea class="input" name="remark" placeholder="请输入文本" auto-focus="true" />
+     
+      <text style="font-size: 30rpx;line-height:2.5em;letter-spacing: 1rpx;color: gray;">
+      你在一朵花的旁边等待了太久，
+      在你看来，如此长久的等待，
+      应该要有一场盛大的绽放与之相配。</text>
+    </view>
+  </view>-->
+
+  <view class="partTwo">
+    <view style="width: 80%;  display: flex;justify-content: space-between;">
+      <view>
+        <view class="his_num">
+          <van-icon bindtap="reRecord" size='60rpx' name="cross" />
+        </view>
+        <view class="his_name">重新录制</view>
+      </view>
+      <view>
+        <view class="his_num">
+          <van-icon bindtap="listenRecord" size='60rpx' name="success" /><van-toast id="van-toast" />
+        </view>
+        <view class="his_name">点击生成</view>
+      </view>
+    </view>
+  </view>
+
+  <view style="display: flex;justify-content: center;margin-top: -180rpx;">
+    <view style="background-color: #fff;  width: 200rpx;height: 200rpx;border-radius: 50%;top: 1126rpx;"></view>
+  </view>
+
+  <view style="display: flex;justify-content: center;margin-top: -182rpx;">
+     <block wx:if="{{!startClick}}">
+     <van-icon size='160rpx'  bindtap="startRecord" color='pink' name="play-circle" /></block>
+     <block wx:else>
+     <van-icon size='160rpx'  bindtap="shutRecord" color='pink' name="pause-circle" /></block>
+  </view>
+ 
+  <view class="handleView" wx:if="{{showhandle1}}">
+    <view wx:if="{{voiceState}}" class="CircleBtn red" bindtap="uploadVoice">录好了</view>
+  </view>
+  <view class="serviceList" wx:if="{{showhandle2}}">
+    <view class="CircleBtn red" bindtap="up" >试听</view>
+  </view>
+</view>

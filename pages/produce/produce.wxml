@@ -1,0 +1,20 @@
+
+<view class='music'>
+<block wx:if="{{!play}}">
+     <van-icon  bindtap="music" size='60rpx'  name="play-circle" /></block>
+     <block wx:else>
+     <van-icon  bindtap="music" size='60rpx'  name="pause-circle" /></block>
+</view>
+
+<view class="cu-progress">
+  <view class="cu-prucin" style="width:{{widthx}}"></view>
+  <view class="cu-left">{{playback}}</view>
+  <view class="cu-right">{{duration}}</view>
+</view>
+<view style="margin-top:400rpx;">
+  <van-button bindtap="produce" square type="primary" custom-style="border-radius:15rpx;width: 60%;margin-left:20%;background-color:#6699ff;border:0rpx;">保存音频</van-button>
+</view><view style="margin-top:100rpx;">
+  <van-button bindtap="share" square type="primary" custom-style="border-radius:15rpx;width: 60%;margin-left:20%;background-color:#6699ff;border:0rpx;">分享社区</van-button>
+</view><view style="margin-top:100rpx;">
+  <van-button bindtap="reproduce" square type="primary" custom-style="border-radius:15rpx;width: 60%;margin-left:20%;background-color:#6699ff;border:0rpx;">重新合成</van-button>
+</view>

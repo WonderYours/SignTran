@@ -1,0 +1,42 @@
+<!--pages/pro/pro.wxml-->
+<van-notice-bar
+  color="#66ccff"
+  background="#ecf9ff"
+  scrollable 
+  left-icon="volume-o"
+  text="使用语音合成时请遵循相关法律法规。"
+/>
+<view class="text" style="white-space:pre-wrap;font-family: STXingKai;">
+    <view>
+      <text style="color: #84d3e9;font-size: 40rpx;">      合成文本</text>
+      <textarea class="input" name="remark" placeholder="输入要合成的内容…" bindinput="wenben" auto-focus="true" />
+
+    </view>
+  </view>
+
+<view class="picker">
+  <van-field
+  value="{{ fieldValue }}"
+  is-link
+  readonly
+  label="音色"
+  placeholder="请选择合成的音色"
+  bind:tap="onClick"
+/>
+
+
+<van-popup show="{{ show }}" round position="bottom">
+  <van-cascader
+    wx:if="{{ show }}"
+    value="{{ cascaderValue }}"
+    title="请选择合成的音色"
+    options="{{ options }}"
+    bind:close="onClose"
+    bind:finish="onFinish"
+  />
+</van-popup>
+</view>
+
+<view style="margin-top:900rpx;">
+  <van-button bindtap="produce" square type="primary" custom-style="border-radius:15rpx;width: 90%;margin-left:5%;background-color:#6699ff;border:0rpx;">生成作品</van-button><van-toast id="van-toast" />
+</view>

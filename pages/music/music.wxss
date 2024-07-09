@@ -1,0 +1,188 @@
+page{
+  background-color: #f5f5f5;
+
+}
+view,image{
+  box-sizing: border-box;
+}
+.music-image{
+  width: 88%;
+  margin:5% 6% 3% 6%;
+  border-radius: 30rpx; 
+}
+.music-title{
+  width: 100%;
+  padding: 0 30% 3% 30%;
+
+  font-size: 42rpx;
+  font-weight: 700;
+}
+.title{
+  width: 100%;
+  padding: 0 6% 3% 6%;
+  font-size: 42rpx;
+  font-weight: 700;
+}
+.music-name{
+  width: 100%;
+  padding: 50rpx 6% 10% 6%;
+  font-size: 24rpx;
+  color: black;
+}
+.music-button{
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  padding: 0 6% 0 3%;
+}
+.music{
+  position: relative;
+  left: 3%;
+
+}
+.cu-progress{
+  height: 6rpx;
+  
+  width: 80%;
+  float: left;
+  background-color: rgba(83, 83, 83, 0.2);
+  margin: -6% 5% 0 15%;
+  border-radius: 20rpx;
+  position: relative; 
+}
+.cu-prucin{
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  float: left;
+  position: relative;
+}
+.cu-prucin::after{
+  border-radius: 50%;
+	background: black;
+	position: absolute;
+	right: 0rpx;
+	content: '';
+	display: block;
+  margin: calc((6rpx - 14rpx)/2);
+	width: 14rpx;
+	height: 14rpx;
+}
+.cu-left{
+  position: absolute;
+  left: 0;
+  margin-top: 16rpx;
+  color: gray;
+  font-size: 22rpx;
+}
+.cu-right{
+  position: absolute;
+  right: 0;
+  margin-top: 16rpx;
+  color: gray;
+  font-size: 22rpx;
+}
+
+.partTwo{
+  height:130rpx;
+  border-radius: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+}
+.button{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-repeat:no-repeat;
+  background-position: center;
+  color:transparent;
+
+
+}
+.text{
+  height: 60rpx;
+  width: 70%;
+  border-radius: 25rpx;
+}
+.box2 {
+  width: 300px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+.box button {
+  align-self: center;
+}
+.box3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.comment {
+  margin: 0;
+  padding: 16rpx 24rpx;
+  width: 100%;
+  /* height: 92rpx; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #cccccc;
+  border-bottom: 1rpx solid #cccccc;
+  /* padding和border被包含在定义的width和height之内。盒子的实际宽度=设置的width（padding和border不会影响实际宽度） */
+  box-sizing: border-box;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-size: 32rpx;
+  transition: all 2s inherit;
+  overflow: visible;
+  /* 设置为固定定位 */
+ 
+  left: 0;
+  position: flex;  
+  bottom: 0; /* 固定在底部 */  
+  width: 100%; /* 可以根据需要设置宽度 */  
+  height: 50px; /* 设置模块的高度 */  
+  background-color: #fff; /* 设置背景色 */  
+  z-index: 999;
+}
+ 
+/* textarea输入框的样式 */
+.textarea {
+  margin: 0;
+  padding: 11rpx 24rpx;
+  /* 宽度为 父容器的宽度 减去 发送按钮的宽度 减去 (左右内边距和左右边框宽度) 减去 右边外边距*/
+  width: calc(100% - 100rpx - 50rpx - 24rpx);
+  /* textarea 的高度随着文本的内容来改变的 设置一个最小高度60rpx*/
+  min-height: 40.8rpx;
+  /* 设置行高 */
+  line-height: 40.8rpx;
+  /* 取消默样式 */
+  outline: none;
+  border: 1rpx solid #cccccc;
+  border-radius: 15rpx;
+  background-color: #FFFFFF;
+  /* padding和border不被包含在定义的width和height之内。盒子的实际宽度=设置的width+padding+border */
+  box-sizing: content-box;
+  overflow: hidden;
+}
+ 
+/* 发送按钮样式 */
+.send_out {
+  margin: 0;
+  padding: 0;
+  width: 100rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border: 1rpx solid #cccccc;
+  border-radius: 10rpx;
+  /* 将发送按钮固定在底部 */
+  position: absolute;
+  right: 24rpx;
+  bottom: 16rpx;
+}

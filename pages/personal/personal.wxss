@@ -1,0 +1,154 @@
+page {
+  background-color: #eeeeee;
+}
+.partOne {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  background-color: #eeeeee;
+  top: 0rpx;
+
+  position: absolute; 
+  align-items:center;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+.userinfo {
+  display: flex;
+  align-items: center;
+  height: 128rpx;
+  margin-left: 0rpx;
+  color: rgb(0, 0, 0);
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 30rpx;
+  margin-top: 50rpx;
+}
+.userinfo-nickname {
+  height: 128rpx;
+}
+.tab {
+  width: 100%;
+  top: 560rpx;
+  position: absolute; 
+}
+
+
+.partTwo{
+  height: 130rpx;
+  width: 95%;
+  background-color: #ffffff;
+  border-radius: 25rpx;
+
+  display: flex;
+  left: 2.5%;
+  justify-content: space-between;
+  align-items:center;
+  text-align: center;
+  top: 180rpx;
+  position: absolute; 
+}
+
+
+.partThree{
+  height: 200rpx;
+  width: 95%;
+  background-color: #ffffff;
+  border-radius: 25rpx;
+
+  display: flex;
+  left: 2.5%;
+  justify-content: space-between;
+  align-items:center;
+  text-align: center;
+  top: 330rpx;
+  position: absolute; 
+
+}
+
+.partTwo navigator {
+  flex: 1;
+}
+.partThree navigator {
+  flex: 1;
+}
+.his_num {
+  color: #66cccc;
+}
+.his_name{
+  color: #aaaaaa;
+  font-size: 26rpx;
+}
+.his_pic{
+  
+  align-items:center;
+
+}
+.van-tabs {
+  background-color: #eeeeee;
+
+}
+.text1 {
+  color: #66cccc !important; 
+  
+}
+.content1 {
+  border-radius: 36rpx 36rpx 0 0;
+  padding: 10rpx 30rpx;
+  overflow-y: scroll;
+}
+.partTwo2{
+  height:150rpx;
+  background-color: #ffffff;
+  border-radius: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+}
+.partTwo1{
+  height:400rpx;
+  background-color: #ffffff;
+  border-radius: 25rpx;
+}
+.main{
+  padding-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+}
+.button{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-repeat:no-repeat;
+  background-position: center;
+  color:transparent;
+  margin-top: 15rpx;
+
+
+}
+.text{
+  height: 80rpx;
+  width: 65%;
+  border-radius: 25rpx;
+}
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}

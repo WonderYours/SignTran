@@ -1,0 +1,27 @@
+.btn-area1 {  
+  background-color: #ffffff; /* 设置背景颜色为绿色 */  
+  color: white; /* 设置字体颜色为白色 */  
+  border-radius: 20px; /* 设置边框圆角 */  
+  padding: 10px 10px; /* 设置内边距 */  
+  font-size: 16px; /* 设置字体大小 */  
+ 
+  margin-top: 2px;
+}
+.btn-area2 {  
+  background-color: #ffffff; /* 设置背景颜色为绿色 */  
+  color: white; /* 设置字体颜色为白色 */  
+  border-radius: 20px; /* 设置边框圆角 */  
+  padding: 10px 10px; /* 设置内边距 */  
+  font-size: 16px; /* 设置字体大小 */  
+
+  margin-top: 6px;
+}
+.button1{
+ 
+  border-radius: 20px;
+}
+.video{
+  position: absolute;  
+  top: 700px; /* 距离页面顶部的距离 */  
+  left: 35px; /* 距离页面左侧的距离 */  
+}

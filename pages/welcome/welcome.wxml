@@ -1,0 +1,23 @@
+
+<view class="bg-image" bindtap='jumppage'></view>
+
+<!--
+<view>
+  <image class="bg-image" mode="scaleToFill" src="/images/background.jpg"></image>
+</view>
+<view style="position: absolute;right: 5%;width: 64rpx;"><text style="font-weight: 600;">登录</text></view>
+<view style="position: absolute;top: 230rpx;left: 10%;">
+  <text style="color: #999696;font-size: 35rpx;">AI语音个性化合成系统</text>
+</view>
+<view style="position: absolute;top: 280rpx;left: 10%;"><text style="font-size: 60rpx;font-weight: 500;">欢迎来到</text><text style="font-family: FZShuTi;font-size: 170rpx;">众声</text></view>
+<view style="position: absolute;width: 100%;text-align: center;top: 540rpx;"><text style="color: #999696;font-size: 35rpx;">点击立即体验</text>
+</view>
+<view class="container">
+  <button class="button" style="background-color: #50c2fc;" size="mini"></button>
+  <van-icon name="arrow" color='white' size='60rpx;' bind:click='jumppage' class="icon" />
+  <van-icon name="minus" color='white' size='60rpx;' bind:click='jumppage' class="icon1" />
+</view>
+<view style="position: absolute;width: 100%;top: 1300rpx;justify-content: space-between;text-align: center;"><text style="color: #ffffff;font-size: 20rpx;">注册即表示你已同意</text>
+</view>
+<view style="position: absolute;width: 100%;top: 1350rpx;justify-content: space-between;text-align: center;"><text style="color: #ffffff;font-size: 20rpx;">众声用户隐私协议</text>
+</view>-->
