@@ -1,70 +1,64 @@
-.btn-area1 {  
-  background-color: #ffffff; /* 设置背景颜色为绿色 */  
-  color: white; /* 设置字体颜色为白色 */  
-  border-radius: 20px; /* 设置边框圆角 */  
-  padding: 10px 10px; /* 设置内边距 */  
-  font-size: 16px; /* 设置字体大小 */  
- 
-  margin-top: 2px;
-}
-.btn-area2 {  
-  background-color: #ffffff; /* 设置背景颜色为绿色 */  
-  color: white; /* 设置字体颜色为白色 */  
-  border-radius: 20px; /* 设置边框圆角 */  
-  padding: 10px 10px; /* 设置内边距 */  
-  font-size: 16px; /* 设置字体大小 */  
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-.button1{
- 
-  border-radius: 20px;
-}
-.text{
-  height: 720rpx;
-  top:0rpx;
-  position: absolute;
-  background-color: #f5f5f5;
-  border-radius: 25rpx;
+#all {
   display: flex;
-  justify-content: space-between;
-  align-items:center;
-  justify-content: space-between;
-  left: 2%;
-  width: 95%;
-  border: 6rpx solid #f5f5f5;
- 
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(236, 236, 236);
 }
-.video{
-  z-index: 1;
-  width: 40px; /* 设置图标宽度 */  
-  height: 40px; /* 设置图标高度 */  
-  margin: 5px; 
-}
-.input{
-  margin-left: 8%;
-  margin-top: 100rpx;
-  height: 200rpx;
-  font-size:40rpx;
-  color:   rgb(20, 20, 20);
-}
-.text2{
-  height: 460rpx;
-  top:80rpx;
 
-  position: absolute;
-  background-color: #ffffff;
-  border-radius: 25rpx;
+.camera {
+  width: 750rpx;
+  flex: 2;
+}
+
+#chat_frame {
+  flex: 3;
+  overflow-y: scroll;
+}
+
+#chat_area {
   display: flex;
-  justify-content: space-between;
-  align-items:center;
-
-  left: 1%;
-  width: 96%;
-  border: 6rpx solid #898a8a;
-  
+  width: 750rpx;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-page{
-  background-color: #f5f5f5;
+.colum {
+  width: 750rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  margin-right: 20rpx;
+  margin-top: 50rpx;
+  gap: 20rpx
+}
+
+.chat_box {
+  width: auto;
+  max-width: 550rpx;
+  background-color: white;
+  padding: 20rpx;
+  color: black;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  justify-content: center;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+
+.fix {
+  position: fixed;
+  display: flex;
+  flex-direction: red;
+  align-content: center;
+  width: 750rpx;
+  bottom: 20rpx;
+  z-index: 100;
+}
+
+.fix>van-icon {
+  flex: 1;
 }
