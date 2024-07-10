@@ -1,23 +1,27 @@
 <view id="all">
-  <camera device-position="front" flash="on" class="camera" style="border-bottom-left-radius: 20rpx;border-bottom-right-radius: 20rpx;"></camera>
-  <image src="/images/微信图片_20240409201320.png" style="position: absolute; top: 2rpx; left: 30rpx; width: 700rpx; height: 500rpx;z-index: 105;opacity:{{opacity}}"></image>
-  <view id="chat_frame">
-    <view id="chat_area">
-      <view class="colum" id="ok">
-        <i-avatar size="large">梁</i-avatar>
-        <view class="chat_box">点击下方按钮，录制视频并上传，我们将识别您的动作并进行翻译</view>
+  <camera device-position="front" flash="on" class="camera" style="--size:{{isRecording?5:2}}"></camera>
+  <image src="/images/微信图片_20240409201320.png" style="position: absolute; top: 5rpx; left: 125rpx; width:500rpx; height: 500rpx;z-index: 105;opacity:{{isRecording?0:1}}"></image>
+  <scroll-view id="chat_frame" scroll-y="true" enhanced="true" scroll-into-view="{{toView}}">
+    <view class="chat_area">
+      <view class="colum" style="flex-direction: row; margin-right: auto;margin-left: 20rpx;">
+        <i-avatar size="large">声</i-avatar>
+        <view class="chat_box" style="border-top-left-radius: 0; border-top-right-radius: 20rpx;">点击下方按钮，录制视频并上传，我们将识别您的动作并进行翻译</view>
       </view>
     </view>
-  </view>
+    <view class="chat_area" wx:for="{{textList}}" wx:key="key">
+      <view class="colum">
+        <i-avatar size="large">用</i-avatar>
+        <view class="chat_box">{{item.content}}</view>
+      </view>
+    </view>
+    <view class="placeHolder" id="bottom"></view>
+  </scroll-view>
 </view>
 
 <view class="fix">
   <van-icon name="video" color="black" size="80rpx" bind:click="find" />
   <van-icon name="play-circle" color="red" size="150rpx" bind:click="record" wx:if="{{!isRecording}}" />
   <van-icon wx:else name="stop-circle" color="red" size="150rpx" bind:click="record" />
-
-
-
   <van-icon name="guide-o" color="black" size="80rpx" bind:click="trans" />
   <!-- <van-icon name="volume" color="black" size="80rpx" bind:click="produce" /> -->
 </view>
