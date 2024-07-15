@@ -1,6 +1,6 @@
 <view id="all">
-  <camera device-position="front" flash="on" class="camera" style="--size:{{isRecording?5:2}}"></camera>
-  <image src="/images/微信图片_20240409201320.png" style="position: absolute; top: 5rpx; left: 125rpx; width:500rpx; height: 500rpx;z-index: 105;opacity:{{isRecording?0:1}}"></image>
+  <camera device-position="front" flash="on" class="camera" style="--size:{{cameraSize}}"></camera>
+  <!-- <image src="/images/微信图片_20240409201320.png" style="position: absolute; top: 5rpx; left: 125rpx; width:500rpx; height: 500rpx;z-index: 105;opacity:{{cameraSize==5?1:0}}"></image> -->
   <scroll-view id="chat_frame" scroll-y="true" enhanced="true" scroll-into-view="{{toView}}">
     <view class="chat_area">
       <view class="colum" style="flex-direction: row; margin-right: auto;margin-left: 20rpx;">
@@ -9,9 +9,20 @@
       </view>
     </view>
     <view class="chat_area" wx:for="{{textList}}" wx:key="key">
-      <view class="colum">
+      <!-- 普通类型 -->
+      <view class="colum" wx:if="{{item.type=='string' ||!item.type}}">
         <i-avatar size="large">用</i-avatar>
         <view class="chat_box">{{item.content}}</view>
+      </view>
+      <!-- 展示视频 -->
+      <view wx:elif="{{item.type=='video'}}" class="colum">
+        <i-avatar size="large">用</i-avatar>
+        <video src="{{item.content}}" controls="false"></video>
+      </view>
+      <!-- 类型错误时 -->
+      <view wx:else class="colum">
+        <i-avatar size="large">错</i-avatar>
+        <view class="chat_box">此类型消息暂时无法显示</view>
       </view>
     </view>
     <view class="placeHolder" id="bottom"></view>

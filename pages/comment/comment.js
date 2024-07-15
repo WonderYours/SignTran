@@ -7,8 +7,9 @@ Page({
     /**
      * [
      *  {
-     *    key:0,
-     *    content:string
+     *    key: 0,
+     *    type: string || video
+     *    content: "hi"
      *  }
      * ]
      */
@@ -25,7 +26,8 @@ Page({
     isStart: false, //记录用户点击开始录制的状态
     isStop: false, //记录用户点击结束录制的状态
     // opacity: 0.5,
-    toView: "bottom"
+    toView: "bottom",
+    cameraSize: 0
   },
   onShow() {
     if (wx.getStorageSync('auth_video')) {
@@ -39,9 +41,7 @@ Page({
 
   onLoad(options) {
     const ctx = wx.createCameraContext()
-    this.setData({
-      ctx
-    })
+    this.data.ctx = ctx
   },
   onUnload() {
     clearInterval(this.data.timer)
@@ -58,6 +58,7 @@ Page({
       return
     }
     this.data.isStart = true
+
     /**
      * 调用wx.createCameraContext().startRecord()方法需要获取用户麦克风权限，否则无法调用且无法录制视频
      * 所以每次进入页面时先进行检验用户是否授权麦克风权限
@@ -115,6 +116,10 @@ Page({
   },
   //开始录制
   startRecord() {
+    // 先放大再开始录制，因为安卓在开始录制后调整大小，将会默认停止录制，进而导致stopRecord报错，stopRecord同理。逆天weapp设计:(
+    this.setData({
+      cameraSize: 5
+    })
     this.data.ctx.startRecord({
       timeoutCallback: (res) => {
         /**
@@ -162,6 +167,10 @@ Page({
       title: "请稍候"
     })
     this.data.isStop = true
+    // 原理同上
+    this.setData({
+      cameraSize: 0
+    })
     this.data.ctx.stopRecord({
       compressed: true, //是否压缩录完的视频
       success: (res) => {
@@ -273,37 +282,52 @@ Page({
 
   trans: function () {
     var filePath = app.globalData.videourl;
-    if (filePath == undefined || filePath == "") {
-      wx.showToast({
-        title: '请先录制视频',
-        icon: "error",
-        duration: 1500
-      })
+    // wx.showToast({
+    //   title: '请先录制视频',
+    //   icon: "error",
+    //   duration: 1500
+    // })
+    // 纯粹测试使用
+    console.log(this.data.video_url)
+    if (this.data.video_url != undefined) {
+      console.log("yes")
       this.data.textList.push({
         key: this.data.textList.length,
-        content: "帮助你我们很开心。"
+        type: "video",
+        content: this.data.video_url
       })
-      this.setData({
-        // text: app.globalData.finaltext,
-        textList: this.data.textList,
-        isIconVisible: false,
-        isvideoVisible: true,
-        // 此处更改意在通知scrollView进行scroll-into-view刷新，从而实现滑动到最底层
-        toView: "bottom"
-      });
-      return;
+      // 此段代码最后调用，切记切记
+      this.data.video_url = undefined
+      app.globalData.videourl = undefined
+    } else {
+      this.data.textList.push({
+        key: this.data.textList.length,
+        type: "string",
+        content: "测试"
+      })
     }
+    this.setData({
+      // text: app.globalData.finaltext,
+      textList: this.data.textList,
+      isIconVisible: false,
+      isvideoVisible: true,
+      // 此处更改意在通知scrollView进行scroll-into-view刷新，从而实现滑动到最底层
+      toView: "bottom"
+    });
+    return;
     var fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
     var convertedFileName = fileName.split('.')[0] + '.mp4';
+
     console.log(convertedFileName);
+
     wx.showLoading({
       title: "请稍候"
     })
     setTimeout(function () {
       wx.hideLoading();
     }, 6000);
-
     return;
+
     wx.uploadFile({
       url: 'https://www.crowdofvoice.top:6006/translate/',
       filePath: app.globalData.videourl,
