@@ -120,6 +120,12 @@ Page({
     this.setData({
       cameraSize: 5
     })
+    // 判断是否已经拍过了
+    if (this.data.video_url) {
+      this.setData({
+        video_url: null
+      })
+    }
     this.data.ctx.startRecord({
       timeoutCallback: (res) => {
         /**
@@ -297,7 +303,9 @@ Page({
         content: this.data.video_url
       })
       // 此段代码最后调用，切记切记
-      this.data.video_url = undefined
+      this.setData({
+        video_url: null
+      })
       app.globalData.videourl = undefined
     } else {
       this.data.textList.push({

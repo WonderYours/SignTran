@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: rgb(215, 215, 215);
+  background-color: rgb(226, 228, 225);
 }
 
 .camera {
@@ -17,7 +17,7 @@
 #chat_frame {
   flex: 3;
   overflow-y: scroll;
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 
 .chat_area {
@@ -42,9 +42,9 @@
 .chat_box {
   width: auto;
   max-width: 550rpx;
-  background-color: white;
+  background-color: rgb(160, 47, 46);
   padding: 20rpx;
-  color: black;
+  color: white;
   border-top-left-radius: 20rpx;
   border-bottom-left-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
@@ -59,14 +59,34 @@
   flex-direction: red;
   align-content: center;
   width: 750rpx;
-  bottom: 20rpx;
+  bottom: 0rpx;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
   z-index: 100;
+  background-color: rgb(226, 228, 225);
+  border-top: solid darkred;
 }
 
 .fix>van-icon {
   flex: 1;
+  color: rgb(72, 12, 11)
 }
 
-.placeHolder{
-  height: 200rpx;
+
+.record {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+.record_active {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  color: rgb(160, 47, 46);
+}
+
+.placeHolder {
+  height: 250rpx;
 }

@@ -30,10 +30,17 @@
 </view>
 
 <view class="fix">
-  <van-icon name="video" color="black" size="80rpx" bind:click="find" />
-  <van-icon name="play-circle" color="red" size="150rpx" bind:click="record" wx:if="{{!isRecording}}" />
-  <van-icon wx:else name="stop-circle" color="red" size="150rpx" bind:click="record" />
-  <van-icon name="guide-o" color="black" size="80rpx" bind:click="trans" />
+  <van-icon name="video-o" size="80rpx" bind:click="find" />
+  <view wx:if="{{!isRecording&&video_url==null}}" class="record" hover-class="record_active">
+    <van-icon name="play-circle" size="150rpx" bind:click="record" />
+  </view>
+  <view wx:elif="{{video_url!=null}}" class="record" hover-class="record_active">
+    <van-icon name="replay" size="150rpx" bind:click="record" />
+  </view>
+  <view wx:else class="record" hover-class="record_active">
+    <van-icon name="stop-circle" size="150rpx" bind:click="record" />
+  </view>
+  <van-icon name="guide-o" size="80rpx" bind:click="trans" />
   <!-- <van-icon name="volume" color="black" size="80rpx" bind:click="produce" /> -->
 </view>
 
