@@ -1,5 +1,4 @@
 <view id="all">
-  <camera device-position="front" flash="on" class="camera" style="--size:{{cameraSize}}"></camera>
   <!-- <image src="/images/微信图片_20240409201320.png" style="position: absolute; top: 5rpx; left: 125rpx; width:500rpx; height: 500rpx;z-index: 105;opacity:{{cameraSize==5?1:0}}"></image> -->
   <scroll-view id="chat_frame" scroll-y="true" enhanced="true" scroll-into-view="{{toView}}">
     <view class="chat_area">
@@ -25,25 +24,44 @@
         <view class="chat_box">此类型消息暂时无法显示</view>
       </view>
     </view>
-    <view class="placeHolder" id="bottom"></view>
   </scroll-view>
+
+  <view class="operator">
+    <!-- 相册 -->
+    <view>
+      <van-icon class-prefix="icon" name="xiangce" class="iconfont" size="80rpx" bind:click="find" />
+      <view style="width: max-content;">相册</view>
+    </view>
+    <!-- 发送 -->
+    <view class="record" hover-class="record_active">
+      <van-icon class-prefix="icon" name="fasong" class="iconfont" size="100rpx" />
+      <view style="color: black;">发送</view>
+    </view>
+    <view bindtap="startCamera">
+      <van-icon class-prefix="icon" name="xiangji" class="iconfont" size="80rpx" />
+      <view style="width: max-content;">录制</view>
+    </view>
+  </view>
+</view>
+<camera device-position="{{devicePosition}}" flash="on" class="camera" wx:if="{{showCamera}}"></camera>
+<view class="camera-cover" wx:if="{{showCamera}}">
+  <view class=" top-tool-bar">
+    <van-icon name="cross" color="white" size="50rpx" style="width: 100rpx;" bind:tap="closeCamera"/>
+  </view>
+  <view class="middle-tool-bar"></view>
+  <view class="bottom-tool-bar"></view>
 </view>
 
-<view class="fix">
-  <van-icon name="video-o" size="80rpx" bind:click="find" />
-  <view wx:if="{{!isRecording&&video_url==null}}" class="record" hover-class="record_active">
-    <van-icon name="play-circle" size="150rpx" bind:click="record" />
+
+<!-- <view wx:if="{{!isRecording&&video_url==null}}" class="record" hover-class="record_active">
+    <van-icon name="play-circle" size="150rpx" bind:click="startRecord" />
   </view>
   <view wx:elif="{{video_url!=null}}" class="record" hover-class="record_active">
     <van-icon name="replay" size="150rpx" bind:click="record" />
   </view>
   <view wx:else class="record" hover-class="record_active">
     <van-icon name="stop-circle" size="150rpx" bind:click="record" />
-  </view>
-  <van-icon name="guide-o" size="80rpx" bind:click="trans" />
-  <!-- <van-icon name="volume" color="black" size="80rpx" bind:click="produce" /> -->
-</view>
-
+  </view> -->
 
 <!-- 
 <van-row>

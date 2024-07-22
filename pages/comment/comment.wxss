@@ -6,12 +6,37 @@
   background-color: rgb(226, 228, 225);
 }
 
-.camera {
+.camera-cover {
+  position: fixed;
+  bottom: 0rpx;
   width: 750rpx;
-  flex: var(--size);
-  --size: 2;
-  border-bottom-left-radius: 20rpx;
-  border-bottom-right-radius: 20rpx;
+  height: 1000rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-tool-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.middle-tool-bar {
+  flex: 5;
+
+}
+
+.bottom-tool-bar {
+  flex: 2
+}
+
+.camera {
+  position: fixed;
+  bottom: 0rpx;
+  width: 750rpx;
+  height: 1000rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
 }
 
 #chat_frame {
@@ -53,40 +78,28 @@
   font-size: 30rpx;
 }
 
-.fix {
-  position: fixed;
+.operator {
   display: flex;
   flex-direction: red;
   align-content: center;
-  width: 750rpx;
-  bottom: 0rpx;
   padding-bottom: 20rpx;
   padding-top: 20rpx;
-  z-index: 100;
   background-color: rgb(226, 228, 225);
   border-top: solid darkred;
 }
 
-.fix>van-icon {
-  flex: 1;
-  color: rgb(72, 12, 11)
-}
-
-
-.record {
-  flex: 1;
+.operator>view {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.record {
   color: red;
 }
 
 .record_active {
-  flex: 1;
-  display: flex;
-  justify-content: center;
   color: rgb(160, 47, 46);
-}
-
-.placeHolder {
-  height: 250rpx;
 }
