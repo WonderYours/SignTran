@@ -4,7 +4,8 @@
     "i-avatar": "../../dist/avatar/index",
     "i-button": "../../dist/button/index",
     "van-sticky": "@vant/weapp/sticky/index",
-    "van-transition": "@vant/weapp/transition/index"
+    "van-transition": "@vant/weapp/transition/index",
+    "van-circle": "@vant/weapp/circle/index"
   },
   "navigationBarTitleText": "手语翻译"
 }

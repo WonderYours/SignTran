@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "./icon.wxss"
+
 .container {
   height: 100%;
   display: flex;
@@ -7,30 +9,4 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: "iconfont"; /* Project id 4629475 */
-  src: url('//at.alicdn.com/t/c/font_4629475_qihqx5lxwua.woff2?t=1721650662474') format('woff2'),
-       url('//at.alicdn.com/t/c/font_4629475_qihqx5lxwua.woff?t=1721650662474') format('woff'),
-       url('//at.alicdn.com/t/c/font_4629475_qihqx5lxwua.ttf?t=1721650662474') format('truetype');
-}
-
-.iconfont {
-  font-family: "iconfont" !important;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-fasong:before {
-  content: "\e678";
-}
-
-.icon-xiangce:before {
-  content: "\e61e";
-}
-
-.icon-xiangji:before {
-  content: "\e8bc";
 }

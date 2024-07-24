@@ -17,7 +17,7 @@
     "pages/realtrans/realtrans",
     "pages/camera/camera"
   ],
-  
+
   "requiredBackgroundModes":["audio","backgroundAudioManager"],
 
   "window": {
@@ -59,9 +59,9 @@
         "iconPath": "/images/personal.png",
         "selectedIconPath": "/images/personal1.png"
       }
-      
+
     ]
-  }
-   
-  
+  },
+  "lazyCodeLoading": "requiredComponents"
+
 }

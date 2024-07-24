@@ -23,11 +23,16 @@
 
 .middle-tool-bar {
   flex: 5;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-tool-bar {
-  flex: 2
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .camera {
