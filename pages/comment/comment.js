@@ -20,7 +20,8 @@ Page({
     startRecordTime: null,
     passedTime: 0,
     cameraCtx: null,
-    minTime: 2
+    minTime: 2,
+    cameraFlash: false
   },
 
   // 控制camera
@@ -57,6 +58,12 @@ Page({
   changeCameraPosition() {
     this.setData({
       devicePosition: this.data.devicePosition == "front" ? "back" : "front"
+    })
+  },
+
+  changeCameraFlash() {
+    this.setData({
+      cameraFlash: this.data.cameraFlash ? false : true
     })
   },
 
@@ -147,7 +154,7 @@ Page({
       wx.hideLoading();
     }, 10000)
     camera.stopRecord({
-      compressed: true, // 是否压缩录完的视频
+      compressed: true,
       success: (res) => {
         this.stopRecordHandler(res);
         wx.hideLoading()
@@ -167,7 +174,6 @@ Page({
           title: '成功',
           icon: "success"
         })
-        console.log(res)
         this.setData({
           videoUrl: res?.tempFiles[0]?.tempFilePath
         })
@@ -181,7 +187,7 @@ Page({
     });
   },
 
-  trans: function () {
+  trans() {
     // 纯粹测试使用
     if (this.data.videoUrl != undefined) {
       console.log("yes")

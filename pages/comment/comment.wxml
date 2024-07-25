@@ -45,10 +45,16 @@
   </view>
 </view>
 <view class="camera" style="z-index:0;background-color: gray;" wx:if="{{showCamera}}"></view>
-<camera device-position="{{devicePosition}}" flash="on" class="camera" wx:if="{{showCamera}}"></camera>
+<camera device-position="{{devicePosition}}" flash="{{cameraFlash?'torch':'off'}}" class="camera" wx:if="{{showCamera}}"></camera>
 <view class="camera-cover" wx:if="{{showCamera}}">
   <view class="top-tool-bar">
-    <van-icon name="cross" color="white" size="50rpx" style="width: 100rpx;" bind:tap="closeCamera" />
+    <!-- 关闭按钮 -->
+    <van-icon wx:if="{{!isRecording}}" name="cross" color="white" size="50rpx" style="width: 100rpx;" bind:tap="closeCamera" />
+    <!-- 摄像头转换 -->
+    <van-icon wx:if="{{!isRecording}}" class-prefix="icon" name="zhuanhuan" class="iconfont" size="50rpx" color="white" size="50rpx" style="width: 100rpx;" bind:tap="changeCameraPosition" />
+    <!-- 闪光灯 -->
+    <van-icon wx:if="{{!isRecording&&devicePosition=='back'&&!cameraFlash}}" class-prefix="icon" name="shanguangdeng-guan" class="iconfont" size="50rpx" color="white" size="50rpx" style="width: 100rpx;" bind:tap="changeCameraFlash" />
+    <van-icon wx:elif="{{!isRecording&&devicePosition=='back'&&cameraFlash}}" class-prefix="icon" name="shanguangdeng-kai" class="iconfont" size="50rpx" color="white" size="50rpx" style="width: 100rpx;" bind:tap="changeCameraFlash" />
   </view>
   <view class="middle-tool-bar">
     <image src="/images/微信图片_20240409201320.png" style="min-height: 100%; min-width: 100%;" wx:if="{{!isRecording}}"></image>
