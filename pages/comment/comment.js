@@ -156,6 +156,30 @@ Page({
     })
   },
 
+  find() {
+    wx.chooseMedia({
+      count: 1,
+      mediaType: ["video"],
+      sourceType: ['album'],
+      sizeType: ["compressed"],
+      success: (res) => {
+        wx.showToast({
+          title: '成功',
+          icon: "success"
+        })
+        console.log(res)
+        this.setData({
+          videoUrl: res?.tempFiles[0]?.tempFilePath
+        })
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: '选取视频失败',
+          icon: "error"
+        })
+      }
+    });
+  },
 
   trans: function () {
     // 纯粹测试使用
