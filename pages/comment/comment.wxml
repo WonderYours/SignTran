@@ -10,7 +10,7 @@
     <view class="chat_area" wx:for="{{textList}}" wx:key="key">
       <!-- 普通类型 -->
       <view class="colum {{item.left?'colum_left':''}}" wx:if="{{item.type=='string' ||!item.type}}">
-        <i-avatar size="large">用</i-avatar>
+        <i-avatar size="large">译</i-avatar>
         <view class="chat_box {{item.left?'chat_box_left':''}}">{{item.content}}</view>
       </view>
       <!-- 展示视频 -->

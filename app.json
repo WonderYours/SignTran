@@ -1,21 +1,6 @@
 {
   "pages": [
-    "pages/comment/comment",
-    "pages/welcome/welcome",
-    "pages/homepage/homepage",
-    "pages/index/index",
-    "pages/Voicepackage/Voicepackage",
-    "pages/personal/personal",
-    "pages/trans/trans",
-    "pages/load/load",
-    "pages/music/music",
-    "pages/mymusic/mymusic",
-    "pages/pro/pro",
-    "pages/produce/produce",
-    "pages/storedmusic1/storedmusic1",
-    "pages/signtrans/signtrans",
-    "pages/realtrans/realtrans",
-    "pages/camera/camera"
+    "pages/comment/comment"
   ],
 
   "requiredBackgroundModes":["audio","backgroundAudioManager"],
@@ -29,38 +14,6 @@
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
-  },
-  "tabBar": {
-    "color": "#515151",
-    "selectedColor": "#66ccff",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/comment/comment",
-        "text": "手语翻译",
-        "iconPath": "/images/手语 (2).png",
-        "selectedIconPath": "/images/手语 (1).png"
-      },
-      {
-        "pagePath": "pages/homepage/homepage",
-        "text": "手语精选",
-        "iconPath": "/images/homepage.png",
-        "selectedIconPath": "/images/homepage1.png"
-      },
-      {
-        "pagePath": "pages/Voicepackage/Voicepackage",
-        "text": "语音包生成",
-        "iconPath": "/images/voicepackage.png",
-        "selectedIconPath": "/images/voicepackage1.png"
-      },
-      {
-        "pagePath": "pages/personal/personal",
-        "text": "个人主页",
-        "iconPath": "/images/personal.png",
-        "selectedIconPath": "/images/personal1.png"
-      }
-
-    ]
   },
   "lazyCodeLoading": "requiredComponents"
 

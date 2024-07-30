@@ -1,4 +1,0 @@
-<view>
-  <camera id="camera" mode="normal" bindCameraFrame="onCameraFrame"></camera>
-  <canvas id="cameraCanvas" style="width: 100%; height: 100%;"></canvas>
-</view>
