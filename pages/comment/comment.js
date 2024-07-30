@@ -21,7 +21,9 @@ Page({
     passedTime: 0,
     cameraCtx: null,
     minTime: 2,
-    cameraFlash: false
+    cameraFlash: false,
+    uploading: false,
+    sending: false
   },
 
   // 控制camera
@@ -174,6 +176,7 @@ Page({
           title: '成功',
           icon: "success"
         })
+        console.log(res)
         this.setData({
           videoUrl: res?.tempFiles[0]?.tempFilePath
         })
@@ -183,6 +186,120 @@ Page({
           title: '选取视频失败',
           icon: "error"
         })
+      }
+    });
+  },
+
+  send() {
+    if (this.data.uploading || this.data.sending) {
+      wx.showToast({
+        title: '上一个视频正在处理，请耐心等待',
+        icon: "loading"
+      })
+      return;
+    }
+    if (!this.data.videoUrl) {
+      wx.showToast({
+        title: '请选择或者拍摄一个视频',
+        icon: "error"
+      })
+      return;
+    }
+    // 聊天框发送视频
+    this.data.textList.push({
+      key: this.data.textList.length,
+      type: "video",
+      content: this.data.videoUrl,
+      left: false,
+    })
+    let videoUrl = this.data.videoUrl
+    this.setData({
+      videoUrl: null,
+      textList: this.data.textList,
+      // 此处更改意在通知scrollView进行scroll-into-view刷新，从而实现滑动到最底层
+      toView: "bottom"
+    })
+    // 微信上传文件
+    this.setData({
+      uploading: true
+    })
+    wx.uploadFile({
+      url: 'https://www.crowdofvoice.top:6006/translate/',
+      filePath: videoUrl,
+      name: 'video',
+      formData: {
+        'video': "video" + Math.floor(Math.random() * 1000000),
+      },
+      success: (uploadFileRes) => {
+        this.setData({
+          uploading: false
+        })
+
+        let str = JSON.parse(uploadFileRes.data).translation.translation
+        str = str.replaceAll("output glosses : ", "")
+        str = str.replaceAll("(", "[").replaceAll(")", "]")
+        str = str.replaceAll("[[", "[").replaceAll("]]", "]")
+        str = str.replaceAll("\'", "\"")
+        console.log(str)
+        let data = JSON.parse(str).map((i) => i[0]).join(" ")
+        this.setData({
+          sending: true
+        })
+        wx.request({
+          url: 'https://api.deepseek.com/chat/completions',
+          method: 'POST',
+          header: {
+            'Authorization': 'Bearer sk-2810faca54d24749bf7b28aa484e2310',
+            'Content-Type': 'application/json'
+          },
+          data: {
+            "model": "deepseek-chat",
+            "messages": [{
+                "role": "system",
+                "content": "将下面一些词语连接成一句连续的话。尽量不要加入其它词语。尽量简单，表达清晰。"
+              },
+              {
+                "role": "user",
+                "content": data
+              }
+
+            ],
+            "stream": false,
+            "max_tokens": 100,
+            "temperature": 0.8,
+            "top_p": 0.8
+          },
+          success: (res) => {
+            this.setData({
+              sending: false
+            })
+            let text = res.data.choices[0].message.content
+            this.data.textList.push({
+              key: this.data.textList.length,
+              type: "string",
+              content: text,
+              left: true,
+            })
+            this.setData({
+              textList: this.data.textList,
+              toView: "bottom"
+            });
+          },
+          fail: (error) => {
+            this.setData({
+              sending: false
+            })
+            console.error(error);
+            // this.errorHandler()
+          },
+        });
+      },
+      fail: (error) => {
+        this.setData({
+          uploading: false
+        })
+        console.error(error);
+        // this.errorHandler()
       }
     });
   },
@@ -215,7 +332,6 @@ Page({
       // 此处更改意在通知scrollView进行scroll-into-view刷新，从而实现滑动到最底层
       toView: "bottom"
     });
-    return;
     var fileName = filePath.substring(filePath.lastIndexOf('/') + 1);
     var convertedFileName = fileName.split('.')[0] + '.mp4';
 
@@ -227,7 +343,6 @@ Page({
     setTimeout(function () {
       wx.hideLoading();
     }, 6000);
-    return;
 
     wx.uploadFile({
       url: 'https://www.crowdofvoice.top:6006/translate/',

@@ -2,10 +2,8 @@
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
     "i-avatar": "../../dist/avatar/index",
-    "i-button": "../../dist/button/index",
-    "van-sticky": "@vant/weapp/sticky/index",
-    "van-transition": "@vant/weapp/transition/index",
-    "van-circle": "@vant/weapp/circle/index"
+    "van-circle": "@vant/weapp/circle/index",
+    "van-loading": "@vant/weapp/loading/index"
   },
   "navigationBarTitleText": "手语翻译"
 }

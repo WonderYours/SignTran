@@ -6,6 +6,17 @@
   background-color: rgb(226, 228, 225);
 }
 
+.chat_box_left {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 20rpx !important;
+}
+
+.colum_left {
+  flex-direction: row !important;
+  margin-right: auto !important;
+  margin-left: 20rpx !important;
+}
+
 .camera-cover {
   position: fixed;
   bottom: 0rpx;

@@ -2,26 +2,27 @@
 
   <scroll-view id="chat_frame" scroll-y="true" enhanced="true" scroll-into-view="{{toView}}">
     <view class="chat_area">
-      <view class="colum" style="flex-direction: row; margin-right: auto;margin-left: 20rpx;">
+      <view class="colum colum_left">
         <i-avatar size="large">声</i-avatar>
-        <view class="chat_box" style="border-top-left-radius: 0; border-top-right-radius: 20rpx;">点击下方按钮，录制视频并上传，我们将识别您的动作并进行翻译</view>
+        <view class="chat_box chat_box_left">点击下方按钮，录制视频并上传，我们将识别您的动作并进行翻译</view>
       </view>
     </view>
     <view class="chat_area" wx:for="{{textList}}" wx:key="key">
       <!-- 普通类型 -->
-      <view class="colum" wx:if="{{item.type=='string' ||!item.type}}">
+      <view class="colum {{item.left?'colum_left':''}}" wx:if="{{item.type=='string' ||!item.type}}">
         <i-avatar size="large">用</i-avatar>
-        <view class="chat_box">{{item.content}}</view>
+        <view class="chat_box {{item.left?'chat_box_left':''}}">{{item.content}}</view>
       </view>
       <!-- 展示视频 -->
-      <view wx:elif="{{item.type=='video'}}" class="colum">
+      <view wx:elif="{{item.type=='video'}}" class="colum {{item.left?'colum_left':''}}">
         <i-avatar size="large">用</i-avatar>
-        <video src="{{item.content}}" controls="false"></video>
+        <video src="{{item.content}}" controls="{{false}}" show-center-play-btn="{{!uploading&&!sending}}" style="height:375rpx;width:500rpx ;"></video>
+        <van-loading size="36px" vertical color="red" style="--loading-text-color:black; align-self: center;" wx:if="{{uploading||sending}}">{{uploading?"上传中":sending?"发送中":"鸿运当头666"}}</van-loading>
       </view>
       <!-- 类型错误时 -->
-      <view wx:else class="colum">
+      <view wx:else class="colum {{item.left?'colum_left':''}}">
         <i-avatar size="large">错</i-avatar>
-        <view class="chat_box">此类型消息暂时无法显示</view>
+        <view class="chat_box {{item.left?'chat_box_left':''}}">此类型消息暂时无法显示</view>
       </view>
     </view>
     <view id="bottom" style="height: 200rpx;"></view>
@@ -34,7 +35,7 @@
       <view style="width: max-content;">相册</view>
     </view>
     <!-- 发送 -->
-    <view class="record" hover-class="record_active" bindtap="trans">
+    <view class="record" hover-class="record_active" bindtap="send">
       <van-icon class-prefix="icon" name="fasong" class="iconfont" size="100rpx" info="{{videoUrl!=null?'待发送':''}}" />
       <view style="color: black;">发送</view>
     </view>
